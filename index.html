@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f5ff"><link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css"><title>Мой день — трекер привычек</title>
+</head>
+<body>
+<div class="app">
+<main class="shell">
+<section id="home" class="screen active">
+<header class="top"><div><div class="hello">Твой день ✨</div><h1>Привычки</h1></div><button class="profile">☺</button></header>
+
+<div class="month-strip" id="monthStrip"></div>
+
+<section class="hero">
+  <div class="hero-left"><span>Прогресс сегодня</span><strong id="percent">0%</strong><p id="progressText">Добавь первую привычку</p></div>
+  <div class="ring" id="ring"><div><b id="ringText">0%</b><small>готово</small></div></div>
+</section>
+
+<div class="section-title"><div><h2>Сегодня</h2><span id="countText">0 из 0 выполнено</span></div><button class="add-small" id="addBtn">＋</button></div>
+<div id="habits" class="habits"></div>
+<button class="add-large" id="addLarge">＋ Добавить привычку</button>
+</section>
+
+<section id="calendarScreen" class="screen">
+<header class="top"><div><div class="hello">Твоя история</div><h1>Календарь</h1></div></header>
+<div class="month-nav"><button class="nav-arrow" id="prev">‹</button><b id="monthName"></b><button class="nav-arrow" id="next">›</button></div>
+<div id="calendar" class="calendar"></div><div id="dayInfo" class="day-info"></div>
+</section>
+
+<section id="stats" class="screen">
+<header class="top"><div><div class="hello">Маленькие шаги</div><h1>Статистика</h1></div></header>
+<div class="stat-hero"><span>Средний прогресс</span><strong id="avg">0%</strong><div class="wide-bar"><i id="avgBar"></i></div></div>
+<div class="stat-card"><h3>Последние 7 дней</h3><div id="weekChart" class="week-chart"></div></div>
+<div class="stat-card"><h3>Твои привычки</h3><div id="habitStats"></div></div>
+</section>
+</main>
+
+<nav class="nav">
+<button class="active" data-screen="home"><span>⌂</span>Сегодня</button>
+<button data-screen="calendarScreen"><span>◫</span>Календарь</button>
+<button data-screen="stats"><span>◔</span>Статистика</button>
+</nav>
+</div>
+
+<div class="modal" id="modal"><div class="sheet">
+<div class="sheet-head"><div><div class="modal-kicker">НОВАЯ ПРИВЫЧКА</div><h2 id="modalTitle">Что хочешь делать каждый день?</h2></div><button class="close" id="close">×</button></div>
+<label>Название<input id="name" maxlength="60" placeholder="Например, Читать 10 страниц"></label>
+<label>Иконка<div class="icons" id="icons"></div></label>
+<label>Время напоминания<input id="time" type="time" value="08:00"></label>
+<div class="days"><span>Повторять</span><button class="day active">Пн</button><button class="day active">Вт</button><button class="day active">Ср</button><button class="day active">Чт</button><button class="day active">Пт</button><button class="day active">Сб</button><button class="day active">Вс</button></div>
+<div class="actions"><button class="cancel" id="cancel">Отмена</button><button class="save" id="save">Сохранить</button></div>
+<button class="delete hidden" id="delete">Удалить привычку</button>
+</div></div>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body></html>
