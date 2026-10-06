@@ -1,0 +1,1 @@
+Загрузите index.html, manifest.json и sw.js в корень GitHub-репозитория и включите GitHub Pages. Это финальная версия дизайна «Мой день».
