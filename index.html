@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d4f43">
+<title>Мой день</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header class="hero-header">
+  <div class="ornament"></div>
+  <button class="header-btn left">☰</button>
+  <div class="header-title"><h1>Мой день</h1><div>Вторник, 7 октября</div><small>4 раджаб 1446 · 🕌</small></div>
+  <button class="header-btn right">☪</button>
+</header>
+
+<main>
+<section class="progress-card panel">
+  <div class="progress-copy">
+    <div class="eyebrow">ПРОГРЕСС СЕГОДНЯ</div>
+    <div class="percent" id="percent">78%</div>
+    <div class="progress-track"><span id="progressBar"></span></div>
+    <div class="progress-sub" id="progressSub">7 из 9 привычек</div>
+  </div>
+  <div class="small-steps">
+    <div class="leaf">❧</div>
+    <b>Маленькие шаги</b>
+    <span>каждый день<br>приводят к большим<br>результатам</span>
+  </div>
+</section>
+
+<section class="next-card">
+  <div class="next-top"><span>СЛЕДУЮЩАЯ ЦЕЛЬ</span><button>Все цели ›</button></div>
+  <div class="next-main">
+    <div class="book-icon">▤</div>
+    <div><h2 id="nextName">Чтение книги</h2><strong id="nextTime">21:00</strong><p id="countdown">через 1 ч 21 мин</p></div>
+  </div>
+  <div class="next-art"><div class="arch"></div><div class="lamp">♨</div><div class="quran">📖</div></div>
+  <div class="timeline" id="timeline"></div>
+</section>
+
+<section class="lower-grid">
+  <section class="habits panel">
+    <div class="section-title"><h2>ПРИВЫЧКИ СЕГОДНЯ</h2><button id="addHabit">Все привычки ›</button></div>
+    <div id="habitList"></div>
+    <button class="add-habit" id="newHabit">＋ Добавить привычку</button>
+  </section>
+
+  <section class="useful panel">
+    <div class="section-title"><h2>◷ &nbsp; ПОЛЕЗНОЕ ВРЕМЯ</h2></div>
+    <div class="useful-total" id="totalTime">2 ч 10 мин</div><div class="today">за сегодня</div>
+    <div id="timeRows"></div>
+    <button class="add-time" id="addTime">Добавить время&nbsp;&nbsp;＋</button>
+  </section>
+</section>
+
+<section class="hadith panel">
+  <div class="hadith-title">▣ &nbsp; ХАДИС ДНЯ</div>
+  <div class="hadith-ar">أَحَبُّ الْأَعْمَالِ إِلَى اللَّهِ مَا دَامَ عَلَيْهِ وَإِنْ قَلَّ</div>
+  <div class="hadith-ru">«Самые любимые Аллаху дела — те, которые<br>совершаются постоянно, даже если их мало».</div>
+  <div class="hadith-source">(Бухари, 6465; Муслим, 783)</div>
+  <span class="ornament-mark left-mark">❧</span><span class="ornament-mark right-mark">❧</span>
+</section>
+</main>
+
+<nav class="bottom-nav">
+<button class="active"><span>⌂</span><label>Сегодня</label></button>
+<button><span>▦</span><label>Календарь</label></button>
+<button><span>◷</span><label>Время</label></button>
+<button><span>▥</span><label>Статистика</label></button>
+<button><span>♕</span><label>Достижения</label></button>
+</nav>
+</div>
+
+<div class="modal" id="modal">
+<div class="sheet">
+<div class="sheet-head"><div><small>НОВАЯ ПРИВЫЧКА</small><h2>Что хочешь делать каждый день?</h2></div><button id="close">×</button></div>
+<label>Название<input id="habitName" placeholder="Например, Читать книгу"></label>
+<label>Иконка<div class="icons" id="icons"></div></label>
+<label>Время <em>(необязательно)</em><input id="habitTime" type="time"></label>
+<div class="actions"><button id="cancel">Отмена</button><button class="save" id="save">Сохранить</button></div>
+</div></div>
+
+<div class="modal" id="timeModal">
+<div class="sheet">
+<div class="sheet-head"><div><small>ПОЛЕЗНОЕ ВРЕМЯ</small><h2>Добавить время</h2></div><button id="closeTime">×</button></div>
+<label>Направление<select id="cat"></select></label>
+<label>Количество минут<input id="mins" type="number" min="1" placeholder="30"></label>
+<div class="actions"><button id="cancelTime">Отмена</button><button class="save" id="saveTime">Добавить</button></div>
+</div></div>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body></html>
